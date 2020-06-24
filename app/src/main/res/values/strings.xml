@@ -1,0 +1,52 @@
+<resources>
+
+    <!--    Need to be updated as per our app. Also, we should create our own api from where we can get this CONFIDENTIAL DETAILS!-->
+
+    <string name="app_name">DigiLocker-1</string>
+    <string name="orgId">in.gov.jharkhand.enibandhan</string>
+    <string name="appId">App12345</string>
+    <string name="secretKey">fCYHoQhNttghLg5wtyRV</string>
+    <string name="redirectUri">""</string>
+
+<!--    POST Method-->
+    <string name="requesterAPIUrl">https://devpartners.digitallocker.gov.in/public/requestor/api/pulldoc/1/xml</string>
+
+<!--    POST Method: Get Access Token API.  Returns JSON response.      &&  Refresh Access Token API!! Returns same as GetAccessToken API.-->
+    <string name="getAccessToken">https://api.digilocker.gov.in/public/oauth2/1/token</string>
+
+<!--    POST Method: Revoke refresh_token or access_token-->
+    <string name="revokeToken">https://api.digitallocker.gov.in/public/oauth2/1/revoke</string>
+
+
+<!--    GET Method: Get the access token or auth token  as per req for future use. We'll have to use the auth token. -->
+<!--                If we get the access_token directly, it does not give us the refresh_token which is used to refresh access_token when it expires.-->
+    <string name="authUrl">https://api.digitallocker.gov.in/public/oauth2/1/authorize</string>
+<!--    Query Strings... -->
+    <string name="responseTypeToken">token</string>
+    <string name="responseTypeCode">code</string>
+
+<!--    GET Method: Get user details using the access code we obtained.-->
+    <string name="getUserDetails">https://api.digitallocker.gov.in/public/oauth2/1/user</string>
+
+<!--    GET Method: Get self uploaded docs' metadata of user. A base directory id can also be passed if needed. -->
+<!--    #TODO: Check this url id it is working or not. -->
+    <string name="getSelfUploadedDocs">https://api.digitallocker.gov.in/public/oauth2/1/files/id</string>
+
+<!--    Get Method: Get list of issued docs. -->
+    <string name="getIssuedDocs">https://api.digitallocker.gov.in/public/oauth2/2/files/issued  </string>
+
+<!--    GET Method: Get the file from URI. Returns the file data in response body. IDK what it returns and how it returns in case of Uploaded Docs!!-->
+<!--    NOTE: It returns data in HTTP Response Header as well.-->
+    <string name="getFileFromUri">https://api.digitallocker.gov.in/public/oauth2/1/file/uri</string>
+    
+<!--    Headers:    -->
+    <string name="formUrlencoded"> application/x-www-form-urlencoded</string>
+
+    <string name="login_Hint">Aadhar No.</string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+
+<!--    Shared Preference... -->
+    <string name="sharedPreference">cookies</string>
+
+</resources>
