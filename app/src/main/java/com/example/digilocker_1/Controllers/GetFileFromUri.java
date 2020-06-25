@@ -49,7 +49,7 @@ public class GetFileFromUri implements Callback<Response> {
             file.setSize(headers.get("Content-Length"));
             file.setHmac(headers.get("hmac"));
             try {
-                if (file.getHmac().equals(CommonHelperFunc.verifyHmac(file.getFile_content(),context.getString(R.string.secretKey)))) {
+                if (file.getHmac().equals(CommonHelperFunc.getHmacinBase64(file.getFile_content(),context.getString(R.string.secretKey)))) {
                     //            Not sure if it should be response1.toString or response1.message()
                     file.setFile_content(response1.toString());
                 }

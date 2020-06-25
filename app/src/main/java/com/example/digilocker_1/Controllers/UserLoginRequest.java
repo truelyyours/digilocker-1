@@ -1,15 +1,12 @@
 package com.example.digilocker_1.Controllers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.widget.Toast;
 
-import com.example.digilocker_1.DataClasses.GetAccessTokenResponse;
 import com.example.digilocker_1.DataClasses.UserLoginResponse;
 import com.example.digilocker_1.HelperClasses.ServiceGenerator;
-import com.example.digilocker_1.MainActivity;
 import com.example.digilocker_1.R;
 import com.example.digilocker_1.RetrofitRequests.InitRequest;
 
@@ -20,6 +17,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+//This is the getAuthCode API.
+//All the data is stored in Shared preference named "cookies"
 public class UserLoginRequest implements Callback<UserLoginResponse> {
     private Context context;
     private String code_challenge = "code_challenge";

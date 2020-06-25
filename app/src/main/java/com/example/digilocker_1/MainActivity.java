@@ -3,8 +3,12 @@ package com.example.digilocker_1;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -41,6 +45,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     final public static int SELECT_FILE = 1;
+//    final private static String DATA_PATH = Environment.get;
     TextView text;
 
     @Override
@@ -96,15 +101,31 @@ public class MainActivity extends AppCompatActivity {
         String pdfPath;
         if (requestCode == SELECT_FILE) {
             if (resultCode == -1) {
-                pdfPath = GetPathFromUri.getPath(getApplicationContext(),data.getData());
+                pdfPath = GetPathFromUri.getPath(getApplicationContext(), data.getData());
                 text.setText(pdfPath);
 
-                File file = new File(pdfPath);
+//                #TODO: I can convert PDF to bitmap (See CommonHelperFunc.pdfToBitmap(File)) IMAGE but am unable to get tess-two to work.
+//                File file = new File(pdfPath);
 //                TessBaseAPI baseAPI = new TessBaseAPI();
-//                Toast.makeText(getApplicationContext(),baseAPI.getInitLanguagesAsString(),Toast.LENGTH_SHORT).show();
-//                baseAPI.setImage(file);
-//                text.setText(baseAPI.getUTF8Text());
+//
+//                try {
+//                    String p = GetPathFromUri.getPath(getApplicationContext(),Uri.fromFile(new File("file:///android_asset/"+getAssets().list("")[1])));
+//                    Log.d("FilePath::",p);
+//                THE PROBLEM IS IN THIS DATA_PATH VARIABLE IS NOT POINTING TO app/src/main/assets folder.
+//                    baseAPI.init(DATA_PATH,"eng" );
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                ArrayList<String> pageText = new ArrayList();
+//                ArrayList<Bitmap> pagesInBitmap= CommonHelperFunc.pdfToBitmap(pdfFile);
+//                for (Bitmap bitmap: pagesInBitmap){
+//                      baseAPI.setImage();
+//                      pageText.add(baseAPI.getUTF8Text());
+//                 }
+//                Use the pageText list to extract information.
 
+//                This is the implementation of itextPDf tool. It can parse data from simple PDF documents.
+//                We might not need to use this as the data of simple PDF docs is sent as raw text data and we can get information directly from that raw data.
                 StringBuilder parsedText = new StringBuilder();
                 try {
                     PdfReader reader = new PdfReader(pdfPath);
@@ -119,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
 //        User PdfRenderer to display pdf
 //        Use default image showing library to show image.
 
