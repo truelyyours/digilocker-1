@@ -1,5 +1,8 @@
 <resources>
 
+<!--    Github link of training data to be downloaded on user's phone.-->
+    <string name="eng_trained_data_url">https://github.com/tesseract-ocr/tessdata/blob/master/eng.traineddata?raw=true</string>
+    <string name="eng_traineddata_filename">eng.traineddata</string>
     <!--    Need to be updated as per our app. Also, we should create our own api from where we can get this CONFIDENTIAL DETAILS!-->
 
     <string name="app_name">DigiLocker-1</string>

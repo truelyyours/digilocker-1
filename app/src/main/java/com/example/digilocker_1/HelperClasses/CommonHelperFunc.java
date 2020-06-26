@@ -35,7 +35,7 @@ public class CommonHelperFunc {
         return hex.toString();
     }
 
-    public ArrayList<Bitmap> pdfToBitmap(File pdfFile) {
+    public static ArrayList<Bitmap> pdfToBitmap(File pdfFile) {
         ArrayList<Bitmap> bitmaps = new ArrayList<>();
 
         try {
